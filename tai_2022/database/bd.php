@@ -25,5 +25,18 @@ class BD {
         return $st;
      }
 
+     public function inserir($dados){
+        $conn = $this->conn();
+        $sql = "INSERT INTO usuario (nome, telefone, cpf) value (?, ?, ?)";
+        $st = $conn->prepare($sql);
+        $arrayDados = [];
+        $arrayDados[] = $dados['nome'];
+        $arrayDados[] = $dados['telefone'];
+        $arrayDados[] = $dados['cpf'];
+        $st->execute($arrayDados);
+
+       return $st;
+    }
+
 }
 ?>
