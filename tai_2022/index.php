@@ -9,6 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body{
+        background-color: gray;
+    }
+</style>
 <body>
 <?php
     $objBD = new BD();
@@ -22,7 +27,7 @@
         echo "Salvar";
         var_dump($_POST);
         $objBD->inserir($_POST);
-        
+        header("Location: index.php");
     }
 ?>
 <h2>Formulário cliente</h2>
